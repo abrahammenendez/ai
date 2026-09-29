@@ -50,10 +50,6 @@ The skills land in the project's `.agents/skills`, which Codex reads, with links
 
 - **Next.js:** the framework ships version-matched docs and an `AGENTS.md` that points to them; see its [AI agents guide](https://nextjs.org/docs/app/guides/ai-agents). The `vercel/next.js` repo also ships skills, not yet reviewed here.
 
-## Nothing official yet
-
-JPA and Hibernate in general, R2DBC, Liquibase, Flyway, gRPC, SOAP, OpenAPI, Kubernetes, Spring Cloud, JUnit, Mockito, MockK, AssertJ, REST Assured, MockServer, Testcontainers for Java, Caffeine, Micrometer, OAuth, OIDC, JWT, GitHub Actions, Gradle, Maven.
-
 ## Watching
 
 - `yalishevant/kotlin-backend-agent-skills`: Spring and Kotlin backend skills by a JetBrains product manager. Good content, but no changes since it was published.

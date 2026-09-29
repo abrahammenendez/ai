@@ -1,6 +1,6 @@
 # ai
 
-My setup for Claude Code and Codex: Claude Code settings, my own skills, and the third-party skills I use in every project.
+My setup for Claude Code and Codex: Claude Code settings, my own skills, and the third-party skills I use in some projects.
 
 ## Setup
 
@@ -43,7 +43,7 @@ Skills for a specific technology go in the project that uses it, not here. [CATA
 
 - `model` and `effortLevel` set the defaults for new sessions. `opus` always means the latest Opus. In the Claude app, the model and effort you pick in the prompt box win over these.
 - `attribution` leaves no Claude trailer in commits or pull requests.
-- The notification and workflow keys turn on features that are off by default.
+- The notification and workflow keys turn on/off features that are on/off by default.
 
 Codex settings aren't kept here: the ChatGPT app writes its own config file.
 
