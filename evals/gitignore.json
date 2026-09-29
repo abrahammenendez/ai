@@ -1,0 +1,30 @@
+{
+  "skill_name": "gitignore",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "New project in this folder: Spring Boot with Kotlin and Gradle (Kotlin DSL), nothing generated yet. Create the .gitignore.",
+      "expected_output": "Fixture: an empty git repo. A short, grouped .gitignore for Gradle and Kotlin.",
+      "files": [],
+      "expectations": [
+        ".gradle and build/ are ignored",
+        "gradle-wrapper.jar stays tracked, with a comment saying why",
+        ".env files are ignored and .env.example is not",
+        ".claude/settings.local.json and CLAUDE.local.md are ignored",
+        "There are no sections for tools the project doesn't use, such as NetBeans, Eclipse or BlueJ"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Clean up this .gitignore.",
+      "expected_output": "Fixture: a small Python project with a 231-line .gitignore, mostly a copy of the Python template plus a few hand-written lines. A short grouped file that keeps the hand-written lines.",
+      "files": [],
+      "expectations": [
+        "The new .gitignore is at most 60 lines",
+        "Every hand-written line from the old file is kept",
+        "__pycache__/, the virtual environment, .env and .pytest_cache/ are still ignored",
+        "No tracked file is ignored by the new rules, and the final message says this was checked"
+      ]
+    }
+  ]
+}

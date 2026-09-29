@@ -1,0 +1,42 @@
+{
+  "skill_name": "agents-md",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I'm starting a new project in this folder: a Spring Boot + Kotlin REST API that tracks my gym and running sessions, just for me for now. It's called \"repslog\". Set up the agent instructions for it.",
+      "expected_output": "Fixture: an empty git repo. Short AGENTS.md from the template with an identical CLAUDE.md, nothing invented.",
+      "files": [],
+      "expectations": [
+        "AGENTS.md and CLAUDE.md exist and are byte-identical",
+        "The title is the project name and the description is one or two sentences",
+        "The How we work section matches the template",
+        "No build, test or run commands are listed, because no build files exist",
+        "There is no architecture overview, directory tree, or list of stack versions"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "This repo only has a CLAUDE.md. Set up the agent instructions so both Claude Code and Codex get them.",
+      "expected_output": "Fixture: a multi-module repo with a root CLAUDE.md of about 70 lines and a frontend module that has its own AGENTS.md. Root AGENTS.md and identical CLAUDE.md that keep only lines agents need.",
+      "files": [],
+      "expectations": [
+        "The root AGENTS.md and CLAUDE.md are byte-identical",
+        "Every command and path in the root files exists in the repo",
+        "Overview and description lines from the old CLAUDE.md are left out or moved, and the final message lists what was left out",
+        "The How we work section matches the template"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Our AGENTS.md (and CLAUDE.md) have grown messy. Clean them up so they help coding agents instead of slowing them down.",
+      "expected_output": "Fixture: a monorepo whose AGENTS.md and CLAUDE.md are identical 150-line narratives: context, architecture, product flow and a phased roadmap. A short file with the narrative moved to docs and a pointer left behind.",
+      "files": [],
+      "expectations": [
+        "AGENTS.md and CLAUDE.md are byte-identical",
+        "AGENTS.md is at most 80 lines",
+        "The roadmap and product-flow content still exists in the repo, in README.md or docs/, and AGENTS.md points to it",
+        "Every command and path in AGENTS.md exists in the repo"
+      ]
+    }
+  ]
+}

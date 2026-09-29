@@ -1,0 +1,29 @@
+{
+  "skill_name": "readme",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I'm starting a new project in this folder: \"repslog\", a Spring Boot + Kotlin REST API that tracks my gym and running sessions, just for me for now. Nothing is built yet. Write its README.",
+      "expected_output": "Fixture: an empty git repo. A README with name, one-sentence description and status only.",
+      "files": [],
+      "expectations": [
+        "README.md has the name, a one-sentence description and a status line",
+        "It lists no install or run commands and no versions, because nothing is built",
+        "It has no filler sections: badges, table of contents, Contributing, feature list or planned endpoints"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "The README is almost empty. Write a proper one.",
+      "expected_output": "Fixture: a monorepo with Java services, a TypeScript frontend, Terraform and Kubernetes files, and an 8-line README. A README whose every command and path exists, with an architecture diagram.",
+      "files": [],
+      "expectations": [
+        "Every command and path in README.md exists in the repo",
+        "Getting started uses commands defined by the repo's build files or scripts",
+        "The architecture section has a Mermaid diagram of the components",
+        "There are no badges, table of contents, or Contributing section without a CONTRIBUTING file",
+        "Facts from the old README that are still true are kept"
+      ]
+    }
+  ]
+}
