@@ -2,7 +2,7 @@
 
 Skills and plugins worth adding to a project that uses the technology. Nothing here is installed by `setup.sh`. Each entry comes from the maker of the technology unless the notes say otherwise.
 
-Last reviewed: 2026-09.
+Last reviewed: 2026-10.
 
 ## Adding a skill to a project
 
@@ -53,3 +53,4 @@ The skills land in the project's `.agents/skills`, which Codex reads, with links
 ## Watching
 
 - `yalishevant/kotlin-backend-agent-skills`: Spring and Kotlin backend skills by a JetBrains product manager. Good content, but no changes since it was published.
+- `wheresryan22/anatomy`: draws a technical idea as an interactive isometric figure of a machine, for docs, articles and landing pages. Not tied to a technology. Its description also matches plain diagram requests, so install it only in projects that need such figures.
