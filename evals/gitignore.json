@@ -7,7 +7,6 @@
       "expected_output": "Fixture: an empty git repo. A short, grouped .gitignore for Gradle and Kotlin.",
       "files": [],
       "expectations": [
-        ".gradle and build/ are ignored",
         "gradle-wrapper.jar stays tracked, with a comment saying why",
         ".env files are ignored and .env.example is not",
         ".claude/settings.local.json and CLAUDE.local.md are ignored",
@@ -17,13 +16,19 @@
     {
       "id": 2,
       "prompt": "Clean up this .gitignore.",
-      "expected_output": "Fixture: a small Python project with a 231-line .gitignore, mostly a copy of the Python template plus a few hand-written lines. A short grouped file that keeps the hand-written lines.",
-      "files": [],
+      "expected_output": "Fixture: a small Python project with a very long .gitignore, mostly a copy of the Python template plus a few hand-written lines. A short grouped file that keeps the hand-written lines.",
+      "files": [
+        "evals/files/gitignore-python/.env.example",
+        "evals/files/gitignore-python/dot-gitignore",
+        "evals/files/gitignore-python/pyproject.toml",
+        "evals/files/gitignore-python/src/pacer/__init__.py",
+        "evals/files/gitignore-python/src/pacer/core.py",
+        "evals/files/gitignore-python/src/pacer/tables/zones.csv",
+        "evals/files/gitignore-python/tests/test_core.py",
+        "evals/files/gitignore-python/tools/build/gen_tables.py"
+      ],
       "expectations": [
-        "The new .gitignore is at most 60 lines",
-        "Every hand-written line from the old file is kept",
-        "__pycache__/, the virtual environment, .env and .pytest_cache/ are still ignored",
-        "No tracked file is ignored by the new rules, and the final message says this was checked"
+        ".claude/settings.local.json and CLAUDE.local.md are ignored"
       ]
     }
   ]

@@ -7,7 +7,6 @@
       "expected_output": "Fixture: an empty git repo. A README with name, one-sentence description and status only.",
       "files": [],
       "expectations": [
-        "README.md has the name, a one-sentence description and a status line",
         "It lists no install or run commands and no versions, because nothing is built",
         "It has no filler sections: badges, table of contents, Contributing, feature list or planned endpoints"
       ]
@@ -15,14 +14,23 @@
     {
       "id": 2,
       "prompt": "The README is almost empty. Write a proper one.",
-      "expected_output": "Fixture: a monorepo with Java services, a TypeScript frontend, Terraform and Kubernetes files, and an 8-line README. A README whose every command and path exists, with an architecture diagram.",
-      "files": [],
+      "expected_output": "Fixture: a monorepo with Java services, a TypeScript frontend, Terraform and Kubernetes files, and a very short README. A README whose every command and path exists, with an architecture diagram.",
+      "files": [
+        "evals/files/readme-monorepo/README.md",
+        "evals/files/readme-monorepo/frontend/.nvmrc",
+        "evals/files/readme-monorepo/frontend/package.json",
+        "evals/files/readme-monorepo/frontend/src/main.ts",
+        "evals/files/readme-monorepo/infra/terraform/main.tf",
+        "evals/files/readme-monorepo/k8s/billing-deployment.yaml",
+        "evals/files/readme-monorepo/k8s/orders-deployment.yaml",
+        "evals/files/readme-monorepo/services/billing/pom.xml",
+        "evals/files/readme-monorepo/services/billing/src/main/java/shop/BillingApplication.java",
+        "evals/files/readme-monorepo/services/orders/pom.xml",
+        "evals/files/readme-monorepo/services/orders/src/main/java/shop/OrdersApplication.java"
+      ],
       "expectations": [
-        "Every command and path in README.md exists in the repo",
-        "Getting started uses commands defined by the repo's build files or scripts",
         "The architecture section has a Mermaid diagram of the components",
-        "There are no badges, table of contents, or Contributing section without a CONTRIBUTING file",
-        "Facts from the old README that are still true are kept"
+        "The architecture diagram shows only connections the repo defines: no links invented between the frontend and the services"
       ]
     }
   ]

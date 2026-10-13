@@ -1,0 +1,4 @@
+{
+  "name": "@tripmates/shared",
+  "scripts": { "build": "tsc", "test": "vitest run" }
+}

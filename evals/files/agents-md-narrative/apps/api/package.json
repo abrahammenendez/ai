@@ -1,0 +1,4 @@
+{
+  "name": "@tripmates/api",
+  "scripts": { "dev": "tsx watch src/index.ts", "build": "tsc", "test": "vitest run" }
+}

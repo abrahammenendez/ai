@@ -1,0 +1,3 @@
+#!/bin/sh
+# Gradle wrapper stub for the eval fixture.
+echo "gradle wrapper"

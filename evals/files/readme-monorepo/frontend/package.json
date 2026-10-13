@@ -1,0 +1,10 @@
+{
+  "name": "shopfleet-web",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "test": "vitest run",
+    "lint": "eslint src"
+  }
+}
