@@ -24,6 +24,7 @@ The skills land in the project's `.agents/skills`, which Codex reads, with links
 | GraphQL | `apollographql/skills` | `graphql-schema`, `graphql-operations`, `apollo-kotlin`, `apollo-server`, `apollo-client` | Pick the client or server you use |
 | React | `vercel-labs/agent-skills` | `vercel-react-best-practices`, `vercel-composition-patterns` | From Vercel; the React team publishes none |
 | Web frontend | `GoogleChrome/modern-web-guidance` | `modern-web-guidance` | From the Chrome team |
+| Jetpack Compose | `android/skills` | `jetpack-compose-performance` | Recomposition, stability and jank. More skills in the repo for adaptive layouts, Navigation 3, testing and security |
 | Web app security | `openai/skills` | `security-best-practices` | Rules for JS/TS, Python and Go frameworks only; nothing for the JVM |
 | Threat modelling | `openai/skills` | `security-threat-model` | Any stack; starts only when asked |
 | Property-based tests | `trailofbits/skills` | `property-based-testing` | Covers jqwik for Java and Kotlin |
