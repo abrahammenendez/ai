@@ -37,7 +37,7 @@ From [mattpocock/skills](https://github.com/mattpocock/skills):
 | `wait-what` | Get the last message explained again in plain words |
 | `writing-for-agents` | Write skills and AGENTS.md files that agents follow |
 
-Skills for a specific technology go in the project that uses it, not here. [CATALOG.md](CATALOG.md) lists the ones worth adding.
+Skills for a specific technology go in the project that uses it, not here. [CATALOG.md](CATALOG.md) lists the skills, plugins and MCP servers worth adding.
 
 ## Settings
 
