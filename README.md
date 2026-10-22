@@ -41,9 +41,11 @@ Skills for a specific technology go in the project that uses it, not here. [CATA
 
 ## MCP servers
 
-`setup.sh` installs no MCP servers. The ones I use are connectors on my claude.ai account. Claude Code gets them in every project when you sign in with a claude.ai account, and loads their tools only when a task needs them. Codex doesn't get them.
+`setup.sh` installs no MCP servers. Most of the ones I use are connectors on my claude.ai account. Claude Code gets them in every project when you sign in with a claude.ai account, and loads their tools only when a task needs them. Codex doesn't get them.
 
-To keep them out of the terminal and IDE sessions, set `"disableClaudeAiConnectors": true` in settings. That setting doesn't reach the Claude desktop app: there, disconnect the connector at [claude.ai/customize/connectors](https://claude.ai/customize/connectors). See [how connectors reach Claude Code](https://code.claude.com/docs/en/mcp#how-connectors-reach-claude-code).
+The last two rows come from the Claude desktop app, so only its sessions get them. Claude in Chrome needs the Claude extension in Chrome. Control Chrome is a desktop extension from Anthropic.
+
+In the desktop app, the Connectors submenu of the prompt box's + menu turns a connector on or off. The change applies to the current session and becomes the default for new ones. For terminal and IDE sessions, set `"disableClaudeAiConnectors": true` in settings to turn off all claude.ai connectors. That setting doesn't reach the desktop app. See [how connectors reach Claude Code](https://code.claude.com/docs/en/mcp#how-connectors-reach-claude-code).
 
 | Connector | Use it to |
 |---|---|
@@ -59,6 +61,8 @@ To keep them out of the terminal and IDE sessions, set `"disableClaudeAiConnecto
 | Gmail, Google Calendar | Read and draft mail; read and change events |
 | Google Drive, Docs, Sheets, Slides | Read and edit files in Google Drive |
 | Spotify | Search music and manage the library |
+| Claude in Chrome | Use my own Chrome, with my sign-ins |
+| Control Chrome | Open, read and switch tabs in Chrome |
 
 ## Settings
 
