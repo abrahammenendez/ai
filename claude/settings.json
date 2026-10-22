@@ -6,6 +6,9 @@
   "outputStyle": "default",
   "theme": "auto",
   "includeCoAuthoredBy": false,
+  "attribution": {
+    "sessionUrl": false
+  },
   "permissions": {},
   "cleanupPeriodDays": 30,
   "agentPushNotifEnabled": true,
