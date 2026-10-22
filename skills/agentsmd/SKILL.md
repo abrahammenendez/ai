@@ -1,5 +1,5 @@
 ---
-name: agents-md
+name: agentsmd
 description: Creates and maintains a project's AGENTS.md and its identical copy CLAUDE.md, the instruction files coding agents load in every session. Use when starting a new project, when a repo has no AGENTS.md or only a CLAUDE.md, when adding a rule or command the agents should remember, when an agent keeps making the same mistake, or when asked to review, clean up, shorten or sync these files.
 ---
 

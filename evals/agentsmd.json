@@ -1,5 +1,5 @@
 {
-  "skill_name": "agents-md",
+  "skill_name": "agentsmd",
   "evals": [
     {
       "id": 1,
@@ -19,20 +19,20 @@
       "prompt": "This repo only has a CLAUDE.md. Set up the agent instructions so both Claude Code and Codex get them.",
       "expected_output": "Fixture: a multi-module repo with a long root CLAUDE.md and a frontend module that has its own AGENTS.md. Root AGENTS.md and identical CLAUDE.md that keep only lines agents need.",
       "files": [
-        "evals/files/agents-md-multimodule/CLAUDE.md",
-        "evals/files/agents-md-multimodule/build.gradle.kts",
-        "evals/files/agents-md-multimodule/docs/architecture.md",
-        "evals/files/agents-md-multimodule/frontend/AGENTS.md",
-        "evals/files/agents-md-multimodule/frontend/package.json",
-        "evals/files/agents-md-multimodule/frontend/src/api/client.ts",
-        "evals/files/agents-md-multimodule/frontend/src/main.ts",
-        "evals/files/agents-md-multimodule/gradle/wrapper/gradle-wrapper.properties",
-        "evals/files/agents-md-multimodule/gradlew",
-        "evals/files/agents-md-multimodule/scripts/gen-api-types.sh",
-        "evals/files/agents-md-multimodule/services/api/build.gradle.kts",
-        "evals/files/agents-md-multimodule/services/api/src/main/kotlin/shop/Main.kt",
-        "evals/files/agents-md-multimodule/services/api/src/main/resources/db/migration/V1__init.sql",
-        "evals/files/agents-md-multimodule/settings.gradle.kts"
+        "evals/files/agentsmd-multimodule/CLAUDE.md",
+        "evals/files/agentsmd-multimodule/build.gradle.kts",
+        "evals/files/agentsmd-multimodule/docs/architecture.md",
+        "evals/files/agentsmd-multimodule/frontend/AGENTS.md",
+        "evals/files/agentsmd-multimodule/frontend/package.json",
+        "evals/files/agentsmd-multimodule/frontend/src/api/client.ts",
+        "evals/files/agentsmd-multimodule/frontend/src/main.ts",
+        "evals/files/agentsmd-multimodule/gradle/wrapper/gradle-wrapper.properties",
+        "evals/files/agentsmd-multimodule/gradlew",
+        "evals/files/agentsmd-multimodule/scripts/gen-api-types.sh",
+        "evals/files/agentsmd-multimodule/services/api/build.gradle.kts",
+        "evals/files/agentsmd-multimodule/services/api/src/main/kotlin/shop/Main.kt",
+        "evals/files/agentsmd-multimodule/services/api/src/main/resources/db/migration/V1__init.sql",
+        "evals/files/agentsmd-multimodule/settings.gradle.kts"
       ],
       "expectations": [
         "The root AGENTS.md and CLAUDE.md are byte-identical",
@@ -46,16 +46,16 @@
       "prompt": "Our AGENTS.md (and CLAUDE.md) have grown messy. Clean them up so they help coding agents instead of slowing them down.",
       "expected_output": "Fixture: a monorepo whose AGENTS.md and CLAUDE.md are identical long narratives: context, architecture, product flow and a phased roadmap. A short file with the narrative moved to docs and a pointer left behind.",
       "files": [
-        "evals/files/agents-md-narrative/AGENTS.md",
-        "evals/files/agents-md-narrative/CLAUDE.md",
-        "evals/files/agents-md-narrative/README.md",
-        "evals/files/agents-md-narrative/apps/api/package.json",
-        "evals/files/agents-md-narrative/apps/api/src/index.ts",
-        "evals/files/agents-md-narrative/apps/web/package.json",
-        "evals/files/agents-md-narrative/apps/web/src/main.ts",
-        "evals/files/agents-md-narrative/package.json",
-        "evals/files/agents-md-narrative/packages/shared/package.json",
-        "evals/files/agents-md-narrative/packages/shared/src/index.ts"
+        "evals/files/agentsmd-narrative/AGENTS.md",
+        "evals/files/agentsmd-narrative/CLAUDE.md",
+        "evals/files/agentsmd-narrative/README.md",
+        "evals/files/agentsmd-narrative/apps/api/package.json",
+        "evals/files/agentsmd-narrative/apps/api/src/index.ts",
+        "evals/files/agentsmd-narrative/apps/web/package.json",
+        "evals/files/agentsmd-narrative/apps/web/src/main.ts",
+        "evals/files/agentsmd-narrative/package.json",
+        "evals/files/agentsmd-narrative/packages/shared/package.json",
+        "evals/files/agentsmd-narrative/packages/shared/src/index.ts"
       ],
       "expectations": [
         "AGENTS.md and CLAUDE.md are byte-identical",
