@@ -57,8 +57,8 @@ The MCP servers I use. Most are connectors on my claude.ai account, which Claude
 | Gmail, Google Calendar | Read and draft mail; read and change events |
 | Google Drive, Docs, Sheets, Slides | Read and edit files in Google Drive |
 | Spotify | Search music and manage the library |
-| Claude in Chrome | Use my own Chrome, with my sign-ins. From the desktop app, so only its sessions get it |
-| Control Chrome | Open, read and switch tabs in Chrome. From the desktop app, so only its sessions get it |
+| Claude in Chrome | Use my own Chrome, with my sign-ins. From the Claude Code desktop app, so only its sessions get it |
+| Control Chrome | Open, read and switch tabs in Chrome. From the Claude Code desktop app, so only its sessions get it |
 
 ## Settings
 
