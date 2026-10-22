@@ -1,6 +1,6 @@
 # ai
 
-My setup for Claude Code and Codex: Claude Code settings, my own skills, and the third-party skills I use in some projects.
+Most of my personal AI setup: my own skills, Claude Code settings, and the third-party skills and MCPs I use in some projects.
 
 ## Setup
 
