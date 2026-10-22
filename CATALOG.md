@@ -34,7 +34,7 @@ Where a repo holds more skills than listed, the notes say what the rest cover. A
 | Vercel | `vercel-labs/agent-skills` | `deploy-to-vercel`, `vercel-cli-with-tokens`, `vercel-optimize` | Deploys, token-based CLI use, and cost and performance work on deployed projects |
 | Web frontend | `GoogleChrome/modern-web-guidance` | `modern-web-guidance`, `chrome-extensions` | From the Chrome team |
 | Web UI review | `vercel-labs/agent-skills` | `web-design-guidelines` | Checks UI code against the Web Interface Guidelines. A review rubric, not tied to a framework |
-| Jetpack Compose | `android/skills` | `jetpack-compose-performance` | Recomposition, stability and jank. More skills in the repo for adaptive layouts, Navigation 3, testing and security |
+| Android | `android/skills` | `jetpack-compose-performance`, `anr-audit-and-fix` | Compose recomposition, stability and jank; ANR risks in code and ANR stack dumps. More skills in the repo for adaptive layouts, Navigation 3, testing, security, on-device AI and XR |
 | Playwright | `microsoft/playwright-cli` | `playwright-cli` | Needs the `playwright-cli` command. Microsoft suggests it over the MCP server for coding agents; see [MCP servers](#mcp-servers) |
 | Figma | `figma/mcp-server-guide` | `figma-use`, `figma-design-to-code`, `figma-code-connect`, `figma-generate-design`, `figma-generate-library` | Need the Figma MCP server; see [MCP servers](#mcp-servers). The repo also covers FigJam, Slides, motion, shaders and SwiftUI. `openai/skills` has Figma skills too, but from OpenAI |
 | Web app security | `openai/skills` | `security-best-practices` | Rules for JS/TS, Python and Go frameworks only; nothing for the JVM |
@@ -46,7 +46,7 @@ Where a repo holds more skills than listed, the notes say what the rest cover. A
 | Redis | `redis/agent-skills` | `redis-core`, `redis-connections`, `redis-clustering`, `redis-security`, `redis-observability`, `redis-search` | The repo also covers Redis Cloud's AI products |
 | Oracle Database | `oracle/skills` | `db` | The repo also covers APEX, Fusion and OCI |
 | GraalVM | `oracle/skills` | `graal` | Native Image builds with Maven or Gradle |
-| Docker | `docker/skills` | `docker-destructive-guardrails`, `docker-build-strategies`, `docker-compose-patterns`, `docker-project-foundations` | The repo also covers Docker Agent and Docker Sandboxes, which run coding agents in isolated microVMs |
+| Docker | `docker/skills` | `docker-destructive-guardrails`, `docker-build-strategies`, `docker-compose-patterns`, `docker-project-foundations`, `docker-docs` | `docker-docs` answers from current Docker docs, best with the Docker docs MCP server; see [MCP servers](#mcp-servers). The repo also covers Docker Agent and Docker Sandboxes, which run coding agents in isolated microVMs |
 | Terraform | `hashicorp/agent-skills` | `terraform-style-guide`, `terraform-test`, `refactor-module`, `terraform-search-import`, `terraform-policy`, `terraform-stacks` | The repo's `provider-*` skills are for people who write Terraform providers |
 | Packer | `hashicorp/agent-skills` | `aws-ami-builder`, `azure-image-builder`, `windows-builder`, `push-to-registry` | |
 | AWS | `aws/agent-toolkit-for-aws` | Pick per service | Large set. Also installs as Claude Code plugins, e.g. `aws-core@claude-plugins-official`. Successor to `awslabs/agent-plugins`, per AWS |
@@ -58,25 +58,46 @@ Where a repo holds more skills than listed, the notes say what the rest cover. A
 
 ## MCP servers
 
-Skills teach an agent how; an MCP server gives it the tools. Add them to a project, not globally: each one adds tool definitions to every session's context.
+Skills teach an agent how; an MCP server gives it the tools. Add a server to the projects that use it. Claude Code loads MCP tools only when a task needs them ([tool search](https://code.claude.com/docs/en/mcp)), but each server still starts with every session and adds its tool names and instructions.
 
 Claude Code writes `--scope project` servers to `.mcp.json`, which you commit. Codex stores its servers in `~/.codex/config.toml`, for all projects.
 
-- **Playwright:** drives a real browser from accessibility snapshots, for testing and checking a running app. Microsoft's own advice is to use the [Playwright CLI](https://github.com/microsoft/playwright-cli) with its skill for coding agents, because the CLI costs fewer tokens. The MCP server suits loops that need a browser that stays open between steps. See the [Playwright MCP repo](https://github.com/microsoft/playwright-mcp).
+For a server with a URL:
 
-  ```bash
-  claude mcp add --scope project playwright npx @playwright/mcp@latest
-  codex mcp add playwright npx "@playwright/mcp@latest"
-  ```
+```bash
+claude mcp add --scope project --transport http <name> <url>
+codex mcp add <name> --url <url>
+```
 
-- **Figma:** reads designs, and with the remote server writes to the canvas. Use the remote server; the desktop one is for specific organization and enterprise needs. The Figma plugin for Claude Code bundles the server and Figma's skills. See [Figma's setup guide](https://developers.figma.com/docs/figma-mcp-server/).
+For a server that runs a command:
 
-  ```bash
-  claude plugin install figma@claude-plugins-official
-  # or the server alone
-  claude mcp add --scope project --transport http figma https://mcp.figma.com/mcp
-  codex mcp add figma --url https://mcp.figma.com/mcp
-  ```
+```bash
+claude mcp add --scope project <name> -- <command>
+codex mcp add <name> -- <command>
+```
+
+Servers that need credentials say how in their docs.
+
+| Technology | Server | URL or command | Notes |
+|---|---|---|---|
+| Browser testing | [Playwright](https://github.com/microsoft/playwright-mcp) | `npx @playwright/mcp@latest` | Drives a real browser from accessibility snapshots. For coding agents Microsoft suggests the `playwright-cli` skill instead, because it costs fewer tokens. The server suits loops that keep one browser open between steps |
+| Web debugging and performance | [Chrome DevTools](https://github.com/ChromeDevTools/chrome-devtools-mcp) | `npx -y chrome-devtools-mcp@latest` | From the Chrome team. Performance traces, network requests, console and screenshots in a real Chrome. Also installs as a Claude Code plugin from the same repo |
+| Figma | [Figma](https://developers.figma.com/docs/figma-mcp-server/) | `https://mcp.figma.com/mcp` | Reads designs and writes to the canvas. The `figma@claude-plugins-official` plugin bundles it with Figma's skills. The desktop server is for specific organization and enterprise needs |
+| GitHub | [GitHub](https://github.com/github/github-mcp-server) | `https://api.githubcopilot.com/mcp/` | For Claude Code, GitHub's guide passes a personal access token with `-H "Authorization: Bearer <token>"`. The `gh` CLI does most of the same work |
+| Docker | [Docker docs](https://github.com/docker/skills) | `https://ai-backend-service.docker.com/mcp` | Searches current Docker docs, for the `docker-docs` skill. The `docker-skills@docker` plugin, from marketplace `docker/skills`, bundles both |
+| Terraform | [Terraform](https://github.com/hashicorp/terraform-mcp-server) | `docker run -i --rm hashicorp/terraform-mcp-server` | Looks up providers and modules in the Terraform Registry, and works with HCP Terraform |
+| MongoDB | [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server) | `npx -y mongodb-mcp-server@latest --readOnly` | Queries a database or Atlas cluster. Takes the connection string from `MDB_MCP_CONNECTION_STRING`. `npx -y mongodb-mcp-server@latest setup` walks you through it |
+| Redis | [Redis](https://github.com/redis/mcp-redis) | `uvx --from git+https://github.com/redis/mcp-redis.git redis-mcp-server --url redis://localhost:6379/0` | Reads and writes data in a Redis instance |
+| Kafka, Flink | [Confluent](https://github.com/confluentinc/mcp-confluent) | `npx -y @confluentinc/mcp-confluent --config ./config.yaml` | Kafka, Flink SQL, Schema Registry and connectors on Confluent Cloud. `--init-config` writes the config file |
+| PostgreSQL on Supabase | [Supabase](https://github.com/supabase/mcp) | `https://mcp.supabase.com/mcp` | Add `?project_ref=<ref>&read_only=true` to the URL to keep it to one project, read only |
+| Grafana, Prometheus, Loki | [Grafana](https://github.com/grafana/mcp-grafana) | `uvx mcp-grafana` | Takes `GRAFANA_URL` and `GRAFANA_SERVICE_ACCOUNT_TOKEN` |
+| Datadog | [Datadog](https://docs.datadoghq.com/bits_ai/mcp_server/) | `https://mcp.datadoghq.com/v1/mcp` | For the US1 site. Other sites have their own host, such as `mcp.datadoghq.eu` |
+| Vercel | [Vercel](https://vercel.com/docs/mcp) | `https://mcp.vercel.com` | Deployments, logs, projects and domains |
+| AWS | [AWS](https://github.com/aws/agent-toolkit-for-aws) | `https://aws-mcp.us-east-1.api.aws/mcp` | Signs requests with your AWS credentials through `uvx mcp-proxy-for-aws-cli@latest <url>`. The `aws-core@claude-plugins-official` plugin bundles it with AWS's skills |
+| Azure | [Azure](https://learn.microsoft.com/azure/developer/azure-mcp-server/) | `npx -y @azure/mcp@latest server start` | All Azure services in one server |
+| Google Cloud | [Google Cloud](https://github.com/google/mcp) | Pick per service | Google runs a remote server per service, which you enable in each Google Cloud project |
+| Microsoft and Azure docs | [Microsoft Learn](https://github.com/MicrosoftDocs/mcp) | `https://learn.microsoft.com/api/mcp` | Searches and fetches official Microsoft docs and code samples |
+| IntelliJ IDEA and other JetBrains IDEs | [JetBrains IDE](https://www.jetbrains.com/help/idea/mcp-server.html) | Built into the IDE | Gives the agent the IDE's own tools. Turn it on in Settings, Tools, MCP Server, then use Auto-Configure for Claude Code or Codex |
 
 ## Other sources
 
@@ -91,4 +112,5 @@ Claude Code writes `--scope project` servers to `.mcp.json`, which you commit. C
 
 ## Watching
 
+- `trailofbits/skills`: the `patching-bugs` and `regression-hunt` plugins, added in October. One reproduces, patches and proves a fix for a named bug; the other hunts regressions in PRs and commits. Each runs a long, recorded workflow, and `patching-bugs` needs `regression-hunt`. Their skills read files outside their own folders, so install them as plugins (`/plugin marketplace add trailofbits/skills`), not with `npx skills`.
 - `wheresryan22/anatomy`: draws a technical idea as an interactive isometric figure of a machine, for docs, articles and landing pages. Not tied to a technology. Its description also matches plain diagram requests, so install it only in projects that need such figures.

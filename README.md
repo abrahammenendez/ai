@@ -39,6 +39,27 @@ From [mattpocock/skills](https://github.com/mattpocock/skills):
 
 Skills for a specific technology go in the project that uses it, not here. [CATALOG.md](CATALOG.md) lists the skills, plugins and MCP servers worth adding.
 
+## MCP servers
+
+`setup.sh` installs no MCP servers. The ones I use are connectors on my claude.ai account. Claude Code gets them in every project when you sign in with a claude.ai account, and loads their tools only when a task needs them. Codex doesn't get them.
+
+To keep them out of the terminal and IDE sessions, set `"disableClaudeAiConnectors": true` in settings. That setting doesn't reach the Claude desktop app: there, disconnect the connector at [claude.ai/customize/connectors](https://claude.ai/customize/connectors). See [how connectors reach Claude Code](https://code.claude.com/docs/en/mcp#how-connectors-reach-claude-code).
+
+| Connector | Use it to |
+|---|---|
+| Claude Docs | Create and edit docs on claude.ai |
+| Figma | Read designs and write to the canvas |
+| Linear | Read and update issues and projects |
+| Notion | Read and write Notion pages and databases |
+| Sentry | Search errors, issues, traces and logs |
+| Vercel | Check deployments, logs and projects |
+| Cloudflare | Call the Cloudflare API and search its docs |
+| Microsoft Learn | Search Microsoft and Azure docs |
+| Superlogical Rex | Search the Rex beta's feedback, changelog and docs |
+| Gmail, Google Calendar | Read and draft mail; read and change events |
+| Google Drive, Docs, Sheets, Slides | Read and edit files in Google Drive |
+| Spotify | Search music and manage the library |
+
 ## Settings
 
 - `model` and `effortLevel` set the defaults for new sessions. `opus` always means the latest Opus. In the Claude app, the model and effort you pick in the prompt box win over these.
