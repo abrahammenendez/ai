@@ -41,7 +41,7 @@ Skills for a specific technology go in the project that uses it, not here. [CATA
 
 ## MCP servers
 
-The MCP servers I use. Most are connectors on my claude.ai account, which Claude Code gets and Codex doesn't. Claude in Chrome and Control Chrome come from the Claude desktop app, so only its sessions get them. `setup.sh` installs none of them.
+The MCP servers I use. Most are connectors on my claude.ai account, which Claude Code gets and Codex doesn't. `setup.sh` installs none of them.
 
 | Connector | Use it to |
 |---|---|
@@ -57,8 +57,8 @@ The MCP servers I use. Most are connectors on my claude.ai account, which Claude
 | Gmail, Google Calendar | Read and draft mail; read and change events |
 | Google Drive, Docs, Sheets, Slides | Read and edit files in Google Drive |
 | Spotify | Search music and manage the library |
-| Claude in Chrome | Use my own Chrome, with my sign-ins |
-| Control Chrome | Open, read and switch tabs in Chrome |
+| Claude in Chrome | Use my own Chrome, with my sign-ins. From the desktop app, so only its sessions get it |
+| Control Chrome | Open, read and switch tabs in Chrome. From the desktop app, so only its sessions get it |
 
 ## Settings
 
