@@ -67,8 +67,9 @@ In the desktop app, the Connectors submenu of the prompt box's + menu turns a co
 ## Settings
 
 - `model` and `effortLevel` set the defaults for new sessions. `opus` always means the latest Opus. In the Claude app, the model and effort you pick in the prompt box win over these.
-- `attribution` leaves no Claude trailer in commits or pull requests.
+- `includeCoAuthoredBy: false` leaves no Claude trailer in commits or pull requests. Claude Code still reads this key, although [`attribution`](https://code.claude.com/docs/en/settings-reference#attribution) replaces it.
 - The notification and workflow keys turn on/off features that are on/off by default.
+- `alwaysThinkingEnabled`, `outputStyle`, `permissions` and `cleanupPeriodDays` hold their default values.
 
 Codex settings aren't kept here: the ChatGPT app writes its own config file.
 
