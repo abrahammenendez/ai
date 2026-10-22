@@ -66,7 +66,8 @@ In the desktop app, the Connectors submenu of the prompt box's + menu turns a co
 
 ## Settings
 
-[claude/settings.json](claude/settings.json) holds my Claude Code settings, which `setup.sh` installs. Codex settings aren't kept here: the ChatGPT app writes its own config file.
+- Claude Code: [claude/settings.json](claude/settings.json), which `setup.sh` installs.
+- Codex: not kept here, because the ChatGPT app writes its own config file.
 
 ## License
 
