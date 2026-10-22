@@ -17,6 +17,12 @@ This does two things:
 
 To update, run `git pull && ./setup.sh install`. To undo, run `./setup.sh uninstall`: it removes these skills and restores your original settings.
 
+To install only my skills, without cloning the repo or changing your settings:
+
+```bash
+npx skills add abrahammenendez/ai
+```
+
 ## Skills
 
 Mine, in [skills/](skills):
