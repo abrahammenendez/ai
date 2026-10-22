@@ -41,7 +41,7 @@ Skills for a specific technology go in the project that uses it, not here. [CATA
 
 ## MCP servers
 
-Connectors on my claude.ai account, not installed by `setup.sh`. Claude Code gets them; Codex doesn't. The last two come from the Claude desktop app, so only its sessions get them.
+The MCP servers I use. Most are connectors on my claude.ai account, which Claude Code gets and Codex doesn't. Claude in Chrome and Control Chrome come from the Claude desktop app, so only its sessions get them. `setup.sh` installs none of them.
 
 | Connector | Use it to |
 |---|---|
