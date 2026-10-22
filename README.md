@@ -37,8 +37,6 @@ From [mattpocock/skills](https://github.com/mattpocock/skills):
 | `wait-what` | Get the last message explained again in plain words |
 | `writing-for-agents` | Write skills and AGENTS.md files that agents follow |
 
-Skills for a specific technology go in the project that uses it, not here. [CATALOG.md](CATALOG.md) lists the skills, plugins and MCP servers worth adding.
-
 ## MCP servers
 
 The MCP servers I use. Most are connectors on my claude.ai account, which Claude Code gets and Codex doesn't. `setup.sh` installs none of them.
@@ -59,6 +57,10 @@ The MCP servers I use. Most are connectors on my claude.ai account, which Claude
 | Spotify | Search music and manage the library |
 | Claude in Chrome | Use my own Chrome, with my sign-ins. From the Claude Code desktop app, so only its sessions get it |
 | Control Chrome | Open, read and switch tabs in Chrome. From the Claude Code desktop app, so only its sessions get it |
+
+## Catalog
+
+[CATALOG.md](CATALOG.md) lists the skills, plugins and MCP servers worth adding to a project that uses their technology. `setup.sh` installs none of them.
 
 ## Settings
 
