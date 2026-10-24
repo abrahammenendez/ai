@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/orders
+  kafka:
+    bootstrap-servers: localhost:9092
+sentry:
+  dsn: ${SENTRY_DSN:}

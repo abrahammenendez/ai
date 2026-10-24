@@ -1,0 +1,75 @@
+{
+  "skill_name": "find-skills-for-project",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Find skills worth adding to this project.",
+      "expected_output": "Fixture: a Spring Boot, Kotlin, Kafka and PostgreSQL service with Docker, Terraform and GitHub Actions. The agent shows the stack it found and asks which coding agents the project uses before researching or installing anything.",
+      "files": [
+        "evals/files/stack-kotlin-spring/.github/workflows/ci.yml",
+        "evals/files/stack-kotlin-spring/AGENTS.md",
+        "evals/files/stack-kotlin-spring/Dockerfile",
+        "evals/files/stack-kotlin-spring/build.gradle.kts",
+        "evals/files/stack-kotlin-spring/compose.yaml",
+        "evals/files/stack-kotlin-spring/gradle/wrapper/gradle-wrapper.properties",
+        "evals/files/stack-kotlin-spring/infra/main.tf",
+        "evals/files/stack-kotlin-spring/settings.gradle.kts",
+        "evals/files/stack-kotlin-spring/src/main/kotlin/shop/OrderEvents.kt",
+        "evals/files/stack-kotlin-spring/src/main/kotlin/shop/OrdersApplication.kt",
+        "evals/files/stack-kotlin-spring/src/main/resources/application.yml",
+        "evals/files/stack-kotlin-spring/src/main/resources/db/migration/V1__orders.sql"
+      ],
+      "expectations": [
+        "It asks which coding agents the project uses, and does not decide this from AGENTS.md or other files",
+        "It lists the technologies it found with the file that shows each, including at least Spring Boot, Kotlin, Kafka, PostgreSQL, Docker and Terraform"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Find skills worth adding to this project. We use Claude Code and Codex, and the stack you find is right, so go straight to the research and show me what you recommend.",
+      "expected_output": "Same fixture. A table of vetted suggestions that prefers each maker's own skills, and nothing installed.",
+      "files": [
+        "evals/files/stack-kotlin-spring/.github/workflows/ci.yml",
+        "evals/files/stack-kotlin-spring/AGENTS.md",
+        "evals/files/stack-kotlin-spring/Dockerfile",
+        "evals/files/stack-kotlin-spring/build.gradle.kts",
+        "evals/files/stack-kotlin-spring/compose.yaml",
+        "evals/files/stack-kotlin-spring/gradle/wrapper/gradle-wrapper.properties",
+        "evals/files/stack-kotlin-spring/infra/main.tf",
+        "evals/files/stack-kotlin-spring/settings.gradle.kts",
+        "evals/files/stack-kotlin-spring/src/main/kotlin/shop/OrderEvents.kt",
+        "evals/files/stack-kotlin-spring/src/main/kotlin/shop/OrdersApplication.kt",
+        "evals/files/stack-kotlin-spring/src/main/resources/application.yml",
+        "evals/files/stack-kotlin-spring/src/main/resources/db/migration/V1__orders.sql"
+      ],
+      "expectations": [
+        "For Kafka it reports what the maker's repo, `confluentinc/agent-skills`, offers and says whether it fits this project",
+        "Where the maker publishes a skill for another technology in the stack, such as `docker/skills` for Docker, it suggests that skill or says why not",
+        "It read the SKILL.md of each suggested skill before suggesting it"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Add the kotlin-backend-jpa-entity-mapping skill from Kotlin/kotlin-agent-skills to this project. We use Claude Code and OpenCode.",
+      "expected_output": "Same fixture. The agent reads the skill, then installs it for this project only, for both agents.",
+      "files": [
+        "evals/files/stack-kotlin-spring/.github/workflows/ci.yml",
+        "evals/files/stack-kotlin-spring/AGENTS.md",
+        "evals/files/stack-kotlin-spring/Dockerfile",
+        "evals/files/stack-kotlin-spring/build.gradle.kts",
+        "evals/files/stack-kotlin-spring/compose.yaml",
+        "evals/files/stack-kotlin-spring/gradle/wrapper/gradle-wrapper.properties",
+        "evals/files/stack-kotlin-spring/infra/main.tf",
+        "evals/files/stack-kotlin-spring/settings.gradle.kts",
+        "evals/files/stack-kotlin-spring/src/main/kotlin/shop/OrderEvents.kt",
+        "evals/files/stack-kotlin-spring/src/main/kotlin/shop/OrdersApplication.kt",
+        "evals/files/stack-kotlin-spring/src/main/resources/application.yml",
+        "evals/files/stack-kotlin-spring/src/main/resources/db/migration/V1__orders.sql"
+      ],
+      "expectations": [
+        "It installs with `npx skills add` and no `-g` or `--global` flag, so the skill goes into this project",
+        "The install command passes `-a` with both `claude-code` and `opencode`"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Find skills for project"
+  short_description: "Find, vet and install skills for the stack"
+
+policy:
+  allow_implicit_invocation: false

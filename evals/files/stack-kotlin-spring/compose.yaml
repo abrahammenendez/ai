@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: orders
+      POSTGRES_PASSWORD: local
+    ports: ["5432:5432"]
+  kafka:
+    image: apache/kafka:4.1.0
+    ports: ["9092:9092"]

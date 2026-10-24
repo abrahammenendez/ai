@@ -32,7 +32,7 @@ Mine, in [skills/](skills):
 | `agentsmd` | Create and maintain a project's AGENTS.md |
 | `readme` | Write and update a README.md |
 | `gitignore` | Write and update a .gitignore from the [github/gitignore](https://github.com/github/gitignore) templates |
-
+| `find-skills-for-project` | Find, vet and install skills for the project's stack. Run it by name; run it again when the stack changes |
 From [mattpocock/skills](https://github.com/mattpocock/skills):
 
 | Skill | Use it to |
