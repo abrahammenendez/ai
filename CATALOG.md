@@ -60,20 +60,22 @@ Where a repo holds more skills than listed, the notes say what the rest cover. A
 
 Skills teach an agent how; an MCP server gives it the tools. Add a server to the projects that use it. Claude Code loads MCP tools only when a task needs them ([tool search](https://code.claude.com/docs/en/mcp)), but each server still starts with every session and adds its tool names and instructions.
 
-Claude Code writes `--scope project` servers to `.mcp.json`, which you commit. Codex stores its servers in `~/.codex/config.toml`, for all projects.
-
-For a server with a URL:
+For Claude Code, `--scope project` writes the server to `.mcp.json`, which you commit:
 
 ```bash
-claude mcp add --scope project --transport http <name> <url>
-codex mcp add <name> --url <url>
+claude mcp add --scope project --transport http <name> <url>   # server with a URL
+claude mcp add --scope project <name> -- <command>             # server that runs a command
 ```
 
-For a server that runs a command:
+For Codex, `codex mcp add` writes to `~/.codex/config.toml`, for all projects. For one project, write the server into the project's `.codex/config.toml` by hand and commit it. Codex reads that file only in projects you trust ([Codex MCP docs](https://learn.chatgpt.com/docs/extend/mcp?surface=cli)). Use one of these two forms for each server:
 
-```bash
-claude mcp add --scope project <name> -- <command>
-codex mcp add <name> -- <command>
+```toml
+[mcp_servers.<name>]
+url = "<url>"              # server with a URL
+
+[mcp_servers.<name>]
+command = "<command>"      # server that runs a command
+args = ["<arg>"]
 ```
 
 Servers that need credentials say how in their docs.
