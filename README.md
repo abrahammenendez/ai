@@ -29,7 +29,7 @@ Mine, in [skills/](skills):
 
 | Skill | Use it to |
 |---|---|
-| `agentsmd` | Create and maintain a project's AGENTS.md and its identical copy CLAUDE.md |
+| `agentsmd` | Create and maintain a project's AGENTS.md |
 | `readme` | Write and update a README.md |
 | `gitignore` | Write and update a .gitignore from the [github/gitignore](https://github.com/github/gitignore) templates |
 

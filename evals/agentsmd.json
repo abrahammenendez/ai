@@ -4,10 +4,10 @@
     {
       "id": 1,
       "prompt": "I'm starting a new project in this folder: a Spring Boot + Kotlin REST API that tracks my gym and running sessions, just for me for now. It's called \"repslog\". Set up the agent instructions for it.",
-      "expected_output": "Fixture: an empty git repo. Short AGENTS.md from the template with an identical CLAUDE.md, nothing invented.",
+      "expected_output": "Fixture: an empty git repo. Short AGENTS.md from the template and no CLAUDE.md, nothing invented.",
       "files": [],
       "expectations": [
-        "AGENTS.md and CLAUDE.md exist and are byte-identical",
+        "AGENTS.md exists and no CLAUDE.md was created",
         "The title is the project name and the description is one or two sentences",
         "The How we work section matches the template",
         "No build, test or run commands are listed, because no build files exist",
@@ -17,7 +17,7 @@
     {
       "id": 2,
       "prompt": "This repo only has a CLAUDE.md. Set up the agent instructions so both Claude Code and Codex get them.",
-      "expected_output": "Fixture: a multi-module repo with a long root CLAUDE.md and a frontend module that has its own AGENTS.md. Root AGENTS.md and identical CLAUDE.md that keep only lines agents need.",
+      "expected_output": "Fixture: a multi-module repo with a long root CLAUDE.md and a frontend module that has its own AGENTS.md. A root AGENTS.md that keeps only lines agents need, and the root CLAUDE.md deleted.",
       "files": [
         "evals/files/agentsmd-multimodule/CLAUDE.md",
         "evals/files/agentsmd-multimodule/build.gradle.kts",
@@ -35,8 +35,8 @@
         "evals/files/agentsmd-multimodule/settings.gradle.kts"
       ],
       "expectations": [
-        "The root AGENTS.md and CLAUDE.md are byte-identical",
-        "Every command and path in the root files exists in the repo",
+        "The root AGENTS.md exists and the root CLAUDE.md is deleted",
+        "Every command and path in the root AGENTS.md exists in the repo",
         "Overview and description lines from the old CLAUDE.md are left out or moved, and the final message lists what was left out",
         "The How we work section matches the template"
       ]
@@ -44,7 +44,7 @@
     {
       "id": 3,
       "prompt": "Our AGENTS.md (and CLAUDE.md) have grown messy. Clean them up so they help coding agents instead of slowing them down.",
-      "expected_output": "Fixture: a monorepo whose AGENTS.md and CLAUDE.md are identical long narratives: context, architecture, product flow and a phased roadmap. A short file with the narrative moved to docs and a pointer left behind.",
+      "expected_output": "Fixture: a monorepo whose AGENTS.md and CLAUDE.md are identical long narratives: context, architecture, product flow and a phased roadmap. A short AGENTS.md with the narrative moved to docs and a pointer left behind, and CLAUDE.md deleted.",
       "files": [
         "evals/files/agentsmd-narrative/AGENTS.md",
         "evals/files/agentsmd-narrative/CLAUDE.md",
@@ -58,7 +58,7 @@
         "evals/files/agentsmd-narrative/packages/shared/src/index.ts"
       ],
       "expectations": [
-        "AGENTS.md and CLAUDE.md are byte-identical",
+        "AGENTS.md exists and CLAUDE.md is deleted",
         "The roadmap and product-flow content still exists in the repo, in README.md or docs/, and AGENTS.md points to it"
       ]
     }

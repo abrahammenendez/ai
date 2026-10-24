@@ -33,4 +33,4 @@ My Claude Code and Codex setup: settings, my own skills, and the third-party ski
 - Ask before adding a dependency.
 - Before calling work done, run the narrowest checks that cover it, and name any check you didn't run.
 - When different readings of a request would lead to materially different work, ask before choosing; make routine calls yourself.
-- Keep this file current: propose a one-line addition when you learn something non-obvious here, and remove lines that stop being true. AGENTS.md and CLAUDE.md are identical copies; change both.
+- Keep this file current: propose a one-line addition when you learn something non-obvious here, and remove lines that stop being true.
