@@ -32,15 +32,21 @@ When the user names a skill to add, run only steps 3 (agents only), 5 and 7.
 
    Then search wider: `npx -y skills@latest find <technology>`, skills.sh and the web. Done when each technology has candidates or a note that none exist.
 
-5. **Vet each candidate.** Read its SKILL.md and every script and reference file in full, from GitHub (`gh api repos/<owner>/<repo>/contents/<path>`) or its skills.sh page, without installing it. Then check:
-   - **Source**: the maker, a catalog the maker verifies, or a community author. Prefer the maker. A repo can move: `gh api repos/<owner>/<repo> --jq .full_name` shows where it lives now, and its owner there is the source.
-   - **Audits**: the skill's skills.sh page shows its security audits. Report any Warn or Fail.
-   - **Activity**: the date of the repo's last commit.
-   - **Audience**: drop skills for people who build the technology itself, such as writing Terraform providers.
-   - **Overlap**: when two skills cover the same ground, among the candidates or with an installed skill, keep one.
-   - **Needs**: an MCP server, a CLI or an account the skill expects. Name it in step 6, so the user knows the skill doesn't work alone.
+5. **Vet each candidate.** Read its SKILL.md and every script and reference file in full, from GitHub (`gh api repos/<owner>/<repo>/contents/<path>`) or its skills.sh page, without installing it. Drop a candidate that fails any of these:
+   - **Version**: it targets the flavor and major version the project uses, such as `spring-kafka` rather than the plain Kafka client, or Spring Boot 3 rather than 4.
+   - **Audience**: it is for people who use the technology, not for people who build it, such as writing Terraform providers.
+   - **Audits**: the skill's skills.sh page shows its security audits. Drop a Fail; report a Warn.
 
-6. **Present** only the candidates you vetted in full. A table per technology: skill, repo, source (maker, verified or community), why it fits this project, audits and risks, overlaps. Then list removals, an offer to update the installed skills you keep, and the technologies with no suitable skill. Recommend a few and mark the rest optional. Done when the user picks.
+   Rank the rest by these, in order:
+   - **Value**: it teaches what the model gets wrong without it, as specific rules you can check. A skill of generic advice the model already follows ranks last.
+   - **Source**: the maker, a catalog the maker verifies, or a community author. Prefer the maker. A repo can move: `gh api repos/<owner>/<repo> --jq .full_name` shows where it lives now, and its owner there is the source.
+   - **Activity**: the date of the repo's last commit.
+   - **Overlap**: when two skills cover the same ground, among the candidates or with an installed skill, keep one.
+   - **Popularity**: installs and stars show attention, not quality. Use them only to break a tie.
+
+   Also note **Needs**: an MCP server, a CLI or an account the skill expects. Name it in step 6, so the user knows the skill doesn't work alone.
+
+6. **Present** only the candidates you vetted in full. A table per technology: skill, repo, source (maker, verified or community), why it fits this project, audits and risks, overlaps. Then list removals, an offer to update the installed skills you keep, and the technologies with no suitable skill, naming any maker skill you dropped and why. Recommend a few and mark the rest optional. Done when the user picks.
 
 7. **Apply only what the user picked.** Install for this project only, for the agents from step 3 (`claude-code`, `codex`, `opencode`; `npx -y skills@latest add --help` names the others):
 
