@@ -1,6 +1,6 @@
 ---
 name: gitignore
-description: Writes and updates a project's .gitignore from the maintained github/gitignore templates, trimmed to the tools the project actually uses. Use when starting a project, when a repo has no .gitignore, when build output, dependencies or secrets show up in git status, or when asked to create, review, clean up or update a .gitignore.
+description: Writes and updates a project's .gitignore from the github/gitignore templates, keeping only what the project uses. Use when starting a project, when a repo has no .gitignore, when build output, dependencies or secrets show up in git status, or when asked to create, clean up or update it.
 ---
 
 # .gitignore

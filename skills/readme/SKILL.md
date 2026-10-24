@@ -1,6 +1,6 @@
 ---
 name: readme
-description: Writes and updates a project's README.md so a newcomer learns what the project is, whether it works yet, and how to run it. Use when starting a project, when a README is missing, thin or out of date, or when asked to write, rewrite, restructure, shorten or update any part of a README.
+description: Writes and updates a project's README.md, covering what the project is, whether it works yet, and how to run it. Use when starting a project, when a README is missing, thin or out of date, or when asked to write or change any part of it.
 ---
 
 # README

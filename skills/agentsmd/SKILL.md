@@ -1,6 +1,6 @@
 ---
 name: agentsmd
-description: Creates and maintains a project's AGENTS.md, the instruction file coding agents such as Codex and Claude Code load in every session. Use when starting a new project, when a repo has no AGENTS.md or still has a CLAUDE.md, when adding a rule or command the agents should remember, when an agent keeps making the same mistake, or when asked to review, clean up, shorten or sync it.
+description: Creates and maintains a project's AGENTS.md, the instruction file coding agents load in every session. Use when starting a project, when a repo has no AGENTS.md or still has a CLAUDE.md, when the agents should remember a rule or command, when an agent keeps making the same mistake, or when asked to clean it up or sync its house rules.
 ---
 
 # AGENTS.md
