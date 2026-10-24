@@ -32,6 +32,17 @@
         "The architecture section has a Mermaid diagram of the components",
         "The architecture diagram shows only connections the repo defines: no links invented between the frontend and the services"
       ]
+    },
+    {
+      "prompt": "New project in this folder: \"tilecount\", a command-line tool that counts the tiles in a floor plan. Nothing works yet. It's licensed under the GNU AGPL, version 3 or any later version, and the LICENSE file is already here. Write the README.",
+      "expected_output": "Fixture: an empty project with only the AGPL-3.0 license text. A short README whose License line uses the SPDX identifier.",
+      "files": [
+        "evals/files/readme-agpl/LICENSE"
+      ],
+      "expectations": [
+        "The License section is one line that names the license as `AGPL-3.0-or-later` and links the LICENSE file"
+      ],
+      "id": 3
     }
   ]
 }

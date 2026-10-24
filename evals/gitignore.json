@@ -30,6 +30,15 @@
       "expectations": [
         ".claude/settings.local.json and CLAUDE.local.md are ignored"
       ]
+    },
+    {
+      "prompt": "New project in this folder. I haven't picked the language or tools yet. Set up the .gitignore.",
+      "expected_output": "Fixture: an empty git repo. A .gitignore with only the groups every project needs, written without asking about the stack.",
+      "files": [],
+      "expectations": [
+        "The .gitignore has only the environment, editor, OS and agent groups: `.env` with `!.env.example`, `.idea/`, `.vscode/`, `.DS_Store`, `.claude/settings.local.json`, `CLAUDE.local.md` and `.claude/worktrees/`"
+      ],
+      "id": 3
     }
   ]
 }

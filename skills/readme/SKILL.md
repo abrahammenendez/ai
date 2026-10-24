@@ -18,7 +18,7 @@ Use this order and include a section only when the project has real content for 
 5. **Usage**: the main ways to use it, each with one real example.
 6. **Architecture**, for systems with more than one component: a Mermaid diagram of the components and how data flows between them, with a few sentences on the main decisions. Link to `docs/` for more.
 7. **Development**: how to run the tests and checks.
-8. **License**: one line naming it and linking the LICENSE file, when one exists.
+8. **License**: one line naming it by its SPDX identifier, such as `MIT` or `AGPL-3.0-or-later`, and linking the LICENSE file, when one exists.
 
 Leave out sections that would be empty or generic: badges that carry no information, a table of contents under about 100 lines, Contributing or Code of Conduct when the repo has no such files, FAQ, acknowledgements, feature lists that restate the description.
 

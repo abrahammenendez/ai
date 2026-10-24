@@ -9,7 +9,7 @@ A good .gitignore lists what this project generates or keeps local, grouped so a
 
 ## Steps
 
-1. Find the stack from the build files: `pom.xml`, `build.gradle(.kts)`, `package.json` and its lockfile, `pyproject.toml`, `go.mod`, `Cargo.toml`, `*.tf`, `Dockerfile` and the like. On an empty project, ask which language, build tool and frameworks it will use.
+1. Find the stack from the build files: `pom.xml`, `build.gradle(.kts)`, `package.json` and its lockfile, `pyproject.toml`, `go.mod`, `Cargo.toml`, `*.tf`, `Dockerfile` and the like. On an empty project, ask which language, build tool and frameworks it will use. When none is chosen yet, skip to step 4 and write only those groups.
 2. Fetch the templates for the language, the build tool and any framework that has one:
 
    ```bash
