@@ -33,6 +33,7 @@ Mine, in [skills/](skills):
 | `readme` | Write and update a README.md |
 | `gitignore` | Write and update a .gitignore from the [github/gitignore](https://github.com/github/gitignore) templates |
 | `find-skills-for-project` | Find, vet and install skills for the project's stack. Run it by name; run it again when the stack changes |
+| `create-public-gh-repo` | Create a new open-source GitHub repo with its license, settings and templates in place. Run it by name in the new project's empty folder |
 
 From [mattpocock/skills](https://github.com/mattpocock/skills):
 

@@ -1,0 +1,16 @@
+name: Feature request
+description: Something you need that the project doesn't do yet.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What you're trying to do, and what stops you today.
+    validations:
+      required: true
+  - type: textarea
+    id: ideas
+    attributes:
+      label: Ideas
+      description: How you think it could work, if you have an idea. Optional.

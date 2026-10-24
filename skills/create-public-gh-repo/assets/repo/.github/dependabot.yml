@@ -1,0 +1,15 @@
+# Security updates for every ecosystem work without an entry here. Each entry
+# adds version updates: add one when the project gets a build file.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    # Wait a week before proposing a new release, so a compromised one has
+    # time to be found and pulled.
+    cooldown:
+      default-days: 7
+    groups:
+      github-actions:
+        patterns: ["*"]

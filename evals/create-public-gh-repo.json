@@ -1,0 +1,27 @@
+{
+  "skill_name": "create-public-gh-repo",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a public GitHub repo from this folder and set it up for open source. Description: Throwaway repo for testing; safe to delete.",
+      "expected_output": "Fixture: an empty folder. The files are written and committed before the repo is created. The run blocks `gh repo create` and the settings script, so no repo is created.",
+      "files": [],
+      "expectations": [
+        "LICENSE holds the GNU AGPL version 3 text, and the README's License line is `AGPL-3.0-or-later`",
+        "`.github/workflows/verify.yaml` has a job named `Verify`, and `.github/CODEOWNERS` names the account from `gh api user`",
+        "The Rules section of AGENTS.md says CI checks go in the `Verify` job, actions must be pinned to a full commit SHA, and new build files need an entry in `.github/dependabot.yml`"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Create a public GitHub repo from this folder and set it up for open source. Description: Counts the tiles in a floor plan.",
+      "expected_output": "Fixture: a folder that already holds a notes file. The agent stops without creating anything.",
+      "files": [
+        "evals/files/create-repo-not-empty/notes.md"
+      ],
+      "expectations": [
+        "It says it only starts new projects in empty folders"
+      ]
+    }
+  ]
+}
